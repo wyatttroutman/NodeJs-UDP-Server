@@ -29,9 +29,46 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="client.js" />
+    <Compile Include="client_base.js" />
+    <Compile Include="public\js\bootstrap.bundle.js" />
+    <Compile Include="public\js\bootstrap.bundle.min.js" />
+    <Compile Include="public\js\bootstrap.js" />
+    <Compile Include="public\js\bootstrap.min.js" />
     <Compile Include="server.js" />
+    <Compile Include="server_base.js" />
+    <Compile Include="sleep.js" />
+    <Content Include=".DS_Store" />
+    <Content Include="cont.htm" />
+    <Content Include="index.htm" />
+    <Content Include="LICENSE" />
     <Content Include="package.json" />
+    <Content Include="public\css\bootstrap-grid.css" />
+    <Content Include="public\css\bootstrap-grid.css.map" />
+    <Content Include="public\css\bootstrap-grid.min.css" />
+    <Content Include="public\css\bootstrap-grid.min.css.map" />
+    <Content Include="public\css\bootstrap-reboot.css" />
+    <Content Include="public\css\bootstrap-reboot.css.map" />
+    <Content Include="public\css\bootstrap-reboot.min.css" />
+    <Content Include="public\css\bootstrap-reboot.min.css.map" />
+    <Content Include="public\css\bootstrap.css" />
+    <Content Include="public\css\bootstrap.css.map" />
+    <Content Include="public\css\bootstrap.min.css" />
+    <Content Include="public\css\bootstrap.min.css.map" />
+    <Content Include="public\css\index.css" />
+    <Content Include="public\js\bootstrap.bundle.js.map" />
+    <Content Include="public\js\bootstrap.bundle.min.js.map" />
+    <Content Include="public\js\bootstrap.js.map" />
+    <Content Include="public\js\bootstrap.min.js.map" />
+    <Content Include="public\snippets\.DS_Store" />
+    <Content Include="public\snippets\menu.html" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public\" />
+    <Folder Include="public\css\" />
+    <Folder Include="public\js\" />
+    <Folder Include="public\snippets\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

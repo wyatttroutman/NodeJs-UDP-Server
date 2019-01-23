@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <title>Node.js UDP</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+  	<div id="menu"></div>
+
+  	<div class="container" style="max-width: 6">
+      <div>
+        <p>
+          This project was completed as an education exercise. It utilizes Node.js and other JavaScript functions to implement a UDP Server / Client system. It supports two modes: UDP Echo and Constant Bit Rate (CBR). 
+        </p>
+        <p>
+          Use the options below to configure your connection and click "Start Service" below.
+        </p>
+      </div>
+      <div>
+        <h3>Configuration</h3>
+      </div>
+      <form action = "http://127.0.0.1:8081/process_get" method = "GET">
+      <div>
+    
+            <div id="divClient">
+              <br>
+              <h5>Client Configuration</h5>
+              <p>Use these parameters to configure your connection to a server.</p>
+              <input type="text" id="targetIP" name="targetIP">
+              <label for="targetIP">Target IP Address (Dotted Quad IPv4 Only)</label>
+
+              <br>
+              <input type="text" id="targetPort" name="targetPort">
+              <label for="targetPort">Target Port</label>
+
+              <br>
+             <select name="clientMode" id="clientMode" class="form-control">
+               <option selected="selected" value="ECHO">UDP Echo</option>
+               <option value="CBR">Constant Bit Rate</option>
+             </select>
+
+              <div id="divECHO">
+                <p>Use the options below to configure parameters specific to UDP Echo.</p>
+                <input type="text" name="ECHOmessageSize" id="ECHOmessageSize">
+                <label for="ECHOmessageSize">Message Size (Bytes)</label>
+                <br>
+                <input type="text" name="ECHOiterations" id="ECHOiterations">
+                <label for="ECHOiterations">Iterations (0 = Infinite)</label>
+                <br>
+                <input type="text" name="ECHOiterationDelay" id="ECHOiterationDelay">
+                <label for="ECHOiterationDelay">Iteration Delay (Microseconds)</label>
+              </div>
+              <div id="divCBR" style="display: none;">
+                <p>Use the options below to configure parameters specific to UDP Constant Bit Rate.</p>
+                <input type="text" name="CBRmessageSize" id="CBRmessageSize">
+                <label for="CBRmessageSize">Message Size (Bytes)</label>
+                <br>
+                <input type="text" name="CBRiterations" id="CBRiterations">
+                <label for="CBRiterations">Iterations (0 = Infinite)</label>
+                <br>
+                <input type="text" name="CBRsendRate" id="CBRsendRate">
+                <label for="CBRsendRate">Target Send Rate</label>
+              </div> 
+            </div>   
+        </div>
+        <div>
+          <div id="divControls">
+            <input type = "submit" class="btn btn-success" value = "Start Service">
+          </div>
+        </div>
+        
+        </form>
+        <br />
+        <div id="divFooter">
+          <p>
+            <h5>Liability</h5>
+            This repository is provided as is. We make no representations or warranties of any kind concerning the legality, safety, suitability, lack of viruses, inaccuracies, typographical errors, or other possible harmful components of this repository. There are inherent dangers in the use of any software, and you are solely responsible for determining whether this software is compatible with your equipment and other software installed on your equipment. You are also solely responsible for the protection of your equipment and backup of your data, and we will not be liable for any damages you may suffer in connection with using, modifying, or distributing this software. This software was written for educational purposes only.
+          </p>
+        </div>   
+  	</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+	// Wait until the dom is loaded
+	$(document).ready(function () {
+	    //Adds menu.html content into any "#menu" element
+	    $('#menu').load('snippets/menu.html');
+
+
+	});
+
+
+    $('#clientMode').on('change', function() {
+      if (this.value == 'ECHO'){
+        $('#divECHO').toggle();
+        $('#divCBR').toggle(); 
+      }
+
+      if (this.value == 'CBR'){
+        $('#divECHO').toggle();
+        $('#divCBR').toggle(); 
+      }
+    });
+    </script>
+  </body>
+</html>
