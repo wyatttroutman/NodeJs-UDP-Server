@@ -14,6 +14,9 @@ After configuring the client, you can watch the exchange of packets and various 
 ## Notes
 As is, there is no real functionality to this project. It was only made as part of a set of educational exercises that I regularly do to maintain my seldom used technical skills.
 
+## License
+This project and its contents are my property and are not to be used for any purpose other than those purposes which I allow, in writing, to the user.
+
 ## Liability
 This repository is provided as is. I make no representations or warranties of any kind for this repository. I will not be liable for any damages you may suffer in connection with using, modifying, or distributing this software. This software was written for Proof of Concept purposes only.
 
